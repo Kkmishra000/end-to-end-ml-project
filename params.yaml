@@ -1,0 +1,2 @@
+train_test_split: 0.2
+random_state: 42

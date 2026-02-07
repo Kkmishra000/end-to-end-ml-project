@@ -1,7 +1,7 @@
 import os
-from box import BoxValueError
+from box.exceptions import BoxValueError
 import yaml
-from ML_Project import logger
+from ML_Project.utils import logger
 import json
 import joblib
 from ensure import ensure_annotations
@@ -43,7 +43,7 @@ def create_directories(path_to_directories: list, verbose=True):
 
     Args:
         path_to_directories (list): list of path of directories
-        ignore_log (bool, optional): ignore if multiple dirs is to be created. Defaults to False.
+        verbose (bool, optional): print log messages for each directory created. Defaults to True.
     """
     for path in path_to_directories:
         os.makedirs(path, exist_ok=True)
@@ -80,7 +80,7 @@ def load_json(path: Path) -> ConfigBox:
     with open(path) as f:
         content = json.load(f)
 
-    logger.info(f"json file loaded succesfully from: {path}")
+    logger.info(f"json file loaded successfully from: {path}")
     return ConfigBox(content)
 
 
