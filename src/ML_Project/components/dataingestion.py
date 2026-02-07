@@ -1,11 +1,10 @@
 import os
 import urllib.request as request
 import zipfile
+from pathlib import Path
 from ML_Project.utils import logger
 from ML_Project.utils.common import get_size
-from pathlib import Path
-from src.ML_Project.config.configuration import ConfigurationManager
-from src.ML_Project.entity.config_entity import DataIngestionConfig    
+from ML_Project.entity.config_entity import DataIngestionConfig    
 
 class DataIngestion:
     def __init__(self, config: DataIngestionConfig):
