@@ -39,6 +39,17 @@ def run_pipeline():
     except Exception as e:
         logger.exception(e)
         raise e
+    
+    STAGE_NAME = "Model Trainer Stage"
+    try:
+        logger.info(f">>>>> stage {STAGE_NAME} started <<<<<")
+        from ML_Project.pipeline.stage04_model_trainer import ModelTrainerPipeline
+        obj = ModelTrainerPipeline()
+        obj.main()
+        logger.info(f">>>>> stage {STAGE_NAME} completed <<<<<\n\nx==========x")
+    except Exception as e:
+        logger.exception(e)
+        raise e        
 
 
 if __name__ == "__main__":

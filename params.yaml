@@ -1,2 +1,6 @@
 train_test_split: 0.2
 random_state: 42
+
+ElasticNet:
+  alpha: 0.5
+  l1_ratio: 0.5
